@@ -14,17 +14,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = date("Y/m/d");   
     if(!empty($postdata)){
         $request = json_decode($postdata);
-        $comments = $request->comments[0];
+        $comments = $request->comments;
         $user_id = $request->user_ID;
         $news_id = $request->news_id;
         $date = date("Y/m/d");
-        $sql = "INSERT INTO comments (comments, user_id, news_id, date, status) VALUES ('$comments', '$user_id', '$news_id', '$date', 1)";
+
+        foreach ($comments as $comment) {
+            $sql = "INSERT INTO comments (comments, user_id, news_id, date, status) VALUES ('$comment', '$user_id', '$news_id', '$date', 1)";
     
-        if ($con->query($sql) === TRUE) {
-            echo json_encode(array('status'=>true,'msg'=>'Comments uploaded!'));
-        }else{
-            echo json_decode(array('status'=>false,'msg'=>'Failed to upload comments'));
+            if ($con->query($sql) !== TRUE) {
+                echo json_encode(array('status'=>false,'msg'=>'Failed to upload comments'));
+                exit;
+            }
         }
+
+        echo json_encode(array('status'=>true,'msg'=>'Comments uploaded!'));
+    } else {
+        echo json_encode(array('status'=>false,'msg'=>'No comments provided'));
     }
 } else {
     echo json_encode(['message' => 'This endpoint only accepts POST requests']);
