@@ -38,3 +38,11 @@ Setup Instructions
       - open http://localhost/phpmyadmin in browser
    g) Run Project:
       - [local](http://localhost:4200/)
+  
+Admin Login:
+ID: admin@gmail.com
+pw: admin123
+
+Register User
+ID: subh@gmail.com
+pw: subh123
