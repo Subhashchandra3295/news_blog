@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <a href="#" class="logo">News Blog</a>
+  <div *ngIf="showRegistrationMenu" class="nav-list">
+    <span class="welcome">Welcome, {{ userName }}</span>
+    <button (click)="logout()">Logout</button>
+    <button (click)="navigateToAddNews()">ADD News</button>
+    <button *ngIf="userRole === 'ADMIN'" (click)="navigateToDashboard()">Dashboard</button>
+  </div>
+  <div *ngIf="!showRegistrationMenu" class="nav-list">
+    <button (click)="navigateToregistration()">Sign Up</button>
+    <button (click)="navigateToregistration()">Log In</button>
+  </div>
+</nav>

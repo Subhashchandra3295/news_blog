@@ -1,0 +1,38 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .col {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col {
+      margin: 10px 0;
+    }
+  }
+  

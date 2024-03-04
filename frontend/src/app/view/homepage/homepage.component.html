@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-sm-12 col-md-4" *ngFor="let data of postData; let i = index">
+    <div class="product-card" *ngIf="data.flag !== 0">
+      <div class="product-tumb">
+        <img [src]="getImageUrl(data.image)" alt="">
+      </div>
+      <div class="product-details">
+        <span class="product-catagory">{{data.date}} </span>
+        <h4><a href="">{{data.title}}</a></h4>
+        <p>{{data.description}}</p>
+        <div class="product-bottom-details">
+          <input type="text" placeholder="Add Comments" [(ngModel)]="addcomments[i]" *ngIf="showRegistrationMenu" />
+          <button type="button" (click)="readMore(data.user_ID, data.Id)" *ngIf="showRegistrationMenu">ADD</button>
+          <button type="button" (click)="getAllComments(data.Id)" style="margin-left: 5px;">Comments</button>
+        </div>
+        <div class="comments" *ngFor="let comment of fetchComments">
+          <p *ngIf="data.Id == comment.news_id">{{comment.comments}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

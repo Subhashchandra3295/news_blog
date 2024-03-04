@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <h1 class="title">Articles Details</h1>
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Articles Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Flag</th>
+            <th scope="col">Article Image</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop over articles array and generate table rows -->
+          <tr *ngFor="let article of articles; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ article.title }}</td>
+            <td>{{ article.description }}</td>
+            <td>{{ article.author_name }}</td>
+            <td>{{ article.date }}</td>
+            <td>{{ article.flag }}</td>
+            <td>{{ article.image }}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="activateArticle(article)" [disabled]="article.flag === 1">Activate</button>
+              <button type="button" class="btn btn-danger" (click)="deactivateArticle(article)" [disabled]="article.flag === 0">Deactivate</button>
+            </td>
+          </tr>
+          <!-- End of loop -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

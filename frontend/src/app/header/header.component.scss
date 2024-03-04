@@ -1,0 +1,54 @@
+/* header.component.scss */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #232323;
+    padding: 20px 15px;
+    align-items: center;
+    border-radius: 10px;
+    color: #ffffff; /* Set text color to white */
+}
+
+.logo {
+    text-decoration: none;
+    color: #04aa6d;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-right: 10px; /* Reduced margin between buttons */
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.nav-list a:hover {
+    color: red;
+}
+
+button {
+    border: none;
+    padding: 5px 8px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right: 10px; /* Added margin between buttons */
+}
+
+/* Adjust styles for welcome message */
+.welcome {
+    margin-right: 20px;
+    font-weight: bold;
+}

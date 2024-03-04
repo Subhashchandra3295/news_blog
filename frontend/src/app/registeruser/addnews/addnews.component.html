@@ -1,0 +1,48 @@
+<app-header></app-header>
+<section class="contact-wrap">
+    <h1 class="title">Add Post</h1>
+    <form class="contact-form" [formGroup]="addPostForm">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="input-block">
+              <!-- <label for="">Author Name</label> -->
+              <input class="form-control" type="text" formControlName="firstName" placeholder="Enter author name">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-block">
+              <!-- <label for="">Last Name</label> -->
+              <input class="form-control" type="text" formControlName="lastName" placeholder="Enter Last Name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="input-block">
+          <!-- <label for="">Email</label> -->
+          <input class="form-control" type="text" formControlName="contactDetails" placeholder="Enter Email">
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="input-block">
+          <!-- <label for="">Message Subject</label> -->
+          <input class="form-control" type="text" formControlName="subject" placeholder="Enter message subject">
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="input-block textarea">
+          <!-- <label for="">Drop your message here</label> -->
+          <textarea rows="3" type="text" class="form-control" formControlName="description" placeholder="Enter message description"></textarea>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="inline-block">
+          <input type="file" (change)="onFileChange($event)">
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <button class="square-button" (click)="addPost()">Send</button>
+      </div>
+    </form>
+  </section>
